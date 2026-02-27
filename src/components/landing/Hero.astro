@@ -1,0 +1,149 @@
+---
+---
+
+<section class="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
+  <div class="mx-auto max-w-7xl px-6 text-center">
+    <div class="animate-fade-in-up">
+      <div class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium uppercase tracking-widest text-slate-600 mb-8">
+        <span class="mr-2 flex h-2 w-2 rounded-full bg-indigo-500"></span>
+        Now in Beta: The speed layer for trainers
+      </div>
+
+      <h1 class="mx-auto max-w-4xl text-5xl font-semibold tracking-tight text-slate-900 md:text-7xl leading-[1.1] text-balance">
+        From rough notes to client-ready in <span class="text-indigo-600">seconds.</span>
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-500 md:text-xl leading-relaxed">
+        You became a trainer to coach, not to fight with clunky software. Type like you're scribbling on a whiteboard, and we instantly structure it into a polished app.
+      </p>
+
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <form class="flex w-full max-w-md items-center gap-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            required
+            class="flex h-12 w-full rounded-md border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-all"
+          />
+          <button
+            type="submit"
+            class="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-indigo-600 px-6 text-base font-medium text-white transition-all hover:bg-indigo-700 hover:-translate-y-[1px] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-white"
+          >
+            Join Waitlist
+          </button>
+        </form>
+      </div>
+      <p class="mt-4 text-xs font-medium text-slate-500">Free during beta. No credit card required.</p>
+    </div>
+
+    <!-- Hero Mockup -->
+    <div class="animate-fade-in-up delay-200 mx-auto mt-16 max-w-5xl rounded-xl border border-slate-200 bg-slate-50 p-2 sm:p-4 shadow-xl shadow-slate-200/50">
+      <div class="rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col md:flex-row h-auto md:h-[32rem]">
+
+        <!-- Left: Raw Input Interface -->
+        <div class="w-full md:w-5/12 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col bg-slate-50/50">
+          <div class="border-b border-slate-200 px-4 py-3 bg-white flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="solar:document-text-linear" stroke-width="1.5" class="text-indigo-600 text-lg"></iconify-icon>
+              <span class="text-sm font-medium tracking-tight text-slate-900">Scratchpad</span>
+            </div>
+            <span class="text-xs text-slate-400">Autosaved</span>
+          </div>
+
+          <div class="flex-1 relative p-0 flex flex-col">
+            <textarea
+              class="w-full h-full bg-transparent border-none resize-none p-5 text-sm font-mono text-slate-600 focus:ring-0 focus:outline-none leading-relaxed"
+              placeholder="Type workout here..."
+              disabled
+            >Sarah Hypertrophy Block - Week 1
+3x/week, knee friendly (db only for lower)
+
+Day 1: Upper
+db bench press 3x 8-10
+seated cable rows 3x 10-12
+db lat raises 4x15
+
+Day 2: Lower
+rdls 3x 8-10 (sub for squat)
+bulgarian split squats 3x 8-10
+leg extensions 3x12-15</textarea>
+
+            <div class="absolute bottom-4 right-4 z-20">
+              <button class="inline-flex h-9 items-center justify-center rounded-md bg-indigo-600 px-4 text-xs font-medium text-white shadow-md transition-colors hover:bg-indigo-700">
+                <iconify-icon icon="solar:magic-stick-3-linear" class="mr-2 text-sm"></iconify-icon>
+                Structure Program
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Generated Output UI -->
+        <div class="w-full md:w-7/12 bg-white flex flex-col relative">
+          <div class="absolute inset-0 bg-white/50 backdrop-blur-[1px] flex items-center justify-center z-10" style="animation: fadeOut 0.5s 1.5s forwards;">
+            <div class="flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm border border-slate-200">
+              <iconify-icon icon="solar:settings-minimalistic-linear" class="animate-spin text-indigo-600"></iconify-icon>
+              <span class="text-xs font-medium text-slate-600 uppercase tracking-widest">Structuring...</span>
+            </div>
+          </div>
+
+          <div class="border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+            <div>
+              <h3 class="text-base font-medium tracking-tight text-slate-900">Sarah's Hypertrophy Block</h3>
+              <p class="text-xs text-slate-500 mt-0.5">4 Weeks • 3x/Week • Knee-Friendly</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center rounded-md bg-amber-50 px-2 py-1 text-xs font-medium text-amber-700 ring-1 ring-inset ring-amber-600/20">Draft</span>
+              <button class="inline-flex h-8 items-center justify-center rounded-md border border-slate-200 bg-white px-3 text-xs font-medium text-slate-900 hover:bg-slate-50">Assign to Client</button>
+            </div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto p-6 space-y-6">
+            <!-- Day 1 -->
+            <div>
+              <h4 class="text-sm font-medium tracking-tight text-slate-900 mb-3 flex items-center gap-2">
+                <iconify-icon icon="solar:calendar-date-linear" class="text-slate-400"></iconify-icon>
+                Day 1: Upper Body Focus
+              </h4>
+              <div class="rounded-lg border border-slate-200 overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-200">
+                  <span class="text-sm font-medium text-slate-700">Dumbbell Bench Press</span>
+                  <span class="text-xs text-slate-500">3 sets &times; 8-10 reps</span>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200">
+                  <span class="text-sm font-medium text-slate-700">Seated Cable Rows</span>
+                  <span class="text-xs text-slate-500">3 sets &times; 10-12 reps</span>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3 bg-white">
+                  <span class="text-sm font-medium text-slate-700">Dumbbell Lateral Raises</span>
+                  <span class="text-xs text-slate-500">4 sets &times; 15 reps</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div>
+              <h4 class="text-sm font-medium tracking-tight text-slate-900 mb-3 flex items-center gap-2">
+                <iconify-icon icon="solar:calendar-date-linear" class="text-slate-400"></iconify-icon>
+                Day 2: Lower Body (Knee-Friendly)
+              </h4>
+              <div class="rounded-lg border border-slate-200 overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-200">
+                  <span class="text-sm font-medium text-slate-700">Romanian Deadlifts (RDLs)</span>
+                  <span class="text-xs text-cyan-700 bg-cyan-50 border border-cyan-100 px-2 py-0.5 rounded-full">Alt for Squat</span>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200">
+                  <span class="text-sm font-medium text-slate-700">Bulgarian Split Squats</span>
+                  <span class="text-xs text-slate-500">3 sets &times; 8-10 reps</span>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3 bg-white">
+                  <span class="text-sm font-medium text-slate-700">Leg Extensions</span>
+                  <span class="text-xs text-slate-500">3 sets &times; 12-15 reps</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

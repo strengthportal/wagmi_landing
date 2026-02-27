@@ -1,0 +1,67 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  tags: string[];
+  image?: string;
+}
+
+const { title, description, pubDate, author, tags, image } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} — WAGMI Fitness Blog`} description={description} ogImage={image}>
+  <Header />
+  <main class="py-16 md:py-24">
+    <div class="mx-auto max-w-3xl px-6">
+      <!-- Article Header -->
+      <header class="mb-12">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag) => (
+            <span class="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl leading-[1.1] mb-6">
+          {title}
+        </h1>
+        <p class="text-lg text-slate-500 mb-8">{description}</p>
+        <div class="flex items-center gap-4 border-t border-b border-slate-200 py-4">
+          <div class="h-9 w-9 rounded-full bg-indigo-100 flex items-center justify-center text-sm font-medium text-indigo-700">
+            {author.charAt(0)}
+          </div>
+          <div>
+            <p class="text-sm font-medium text-slate-900">{author}</p>
+            <p class="text-xs text-slate-500">{formattedDate}</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-slate max-w-none">
+        <slot />
+      </article>
+
+      <!-- Back to Blog -->
+      <div class="mt-16 pt-8 border-t border-slate-200">
+        <a href="/blog/" class="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700">
+          <iconify-icon icon="solar:arrow-left-linear"></iconify-icon>
+          Back to Blog
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
