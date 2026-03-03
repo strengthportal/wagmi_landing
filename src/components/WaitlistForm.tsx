@@ -2,10 +2,19 @@ import { useState, useEffect, useRef } from 'react';
 
 declare global {
   interface Window {
-    __wagmiTurnstileToken?: string;
-    __wagmiTurnstileCallback?: (token: string) => void;
-    __wagmiTurnstileExpired?: () => void;
-    __wagmiTurnstileError?: () => void;
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          size?: 'normal' | 'compact' | 'invisible';
+          callback?: (token: string) => void;
+          'expired-callback'?: () => void;
+          'error-callback'?: () => void;
+        }
+      ) => string;
+      remove: (widgetId: string) => void;
+    };
   }
 }
 
@@ -21,33 +30,58 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
   const [errorMessage, setErrorMessage] = useState('');
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
 
   useEffect(() => {
-    // Register Turnstile callbacks — the widget calls these by name on window
-    window.__wagmiTurnstileCallback = (token: string) => setTurnstileToken(token);
-    window.__wagmiTurnstileExpired = () => setTurnstileToken(null);
-    window.__wagmiTurnstileError = () => setTurnstileToken(null);
+    let cancelled = false;
 
-    // Load Turnstile script once
-    if (!document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
+    function initWidget() {
+      if (cancelled || !turnstileContainerRef.current || !window.turnstile) return;
+      widgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
+        sitekey: '0x4AAAAAAClPdTUjwMIFdS8i',
+        size: 'invisible',
+        callback: (token) => { if (!cancelled) setTurnstileToken(token); },
+        'expired-callback': () => { if (!cancelled) setTurnstileToken(null); },
+        'error-callback': () => { if (!cancelled) setTurnstileToken(null); },
+      });
+    }
+
+    if (window.turnstile) {
+      initWidget();
+    } else {
+      // Load with render=explicit so the script doesn't auto-render .cf-turnstile divs
+      if (!document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]')) {
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+      }
+      // Poll until the script has loaded and window.turnstile is available
+      const interval = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(interval);
+          initWidget();
+        }
+      }, 100);
+      return () => {
+        cancelled = true;
+        clearInterval(interval);
+        if (widgetIdRef.current) window.turnstile?.remove(widgetIdRef.current);
+      };
     }
 
     return () => {
-      delete window.__wagmiTurnstileCallback;
-      delete window.__wagmiTurnstileExpired;
-      delete window.__wagmiTurnstileError;
+      cancelled = true;
+      if (widgetIdRef.current) window.turnstile?.remove(widgetIdRef.current);
     };
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    // Honeypot — silently "succeed" for bots that filled the hidden field
+    // Honeypot — silently succeed so bots think they signed up
     if (honeypotRef.current?.value) {
       setFormState('success');
       return;
@@ -87,7 +121,7 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
       } else {
         setFormState('error');
         setErrorMessage(data.error ?? 'Something went wrong. Please try again.');
-        setTurnstileToken(null); // token was consumed; widget will re-verify automatically
+        setTurnstileToken(null);
       }
     } catch {
       setFormState('error');
@@ -109,6 +143,9 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
 
   return (
     <div className={isHero ? 'flex w-full max-w-md flex-col gap-2' : 'mx-auto w-full max-w-md flex flex-col gap-3'}>
+      {/* Turnstile mounts here via explicit render API — hidden, no layout impact */}
+      <div ref={turnstileContainerRef} style={{ display: 'none' }} />
+
       <form
         onSubmit={handleSubmit}
         noValidate
@@ -133,16 +170,6 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
           required
           disabled={formState === 'submitting'}
           className="flex h-12 w-full rounded-md border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm transition-all focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-60"
-        />
-
-        {/* Invisible Turnstile widget — no visible UI, token captured via callback */}
-        <div
-          className="cf-turnstile"
-          data-sitekey="0x4AAAAAAClPdTUjwMIFdS8i"
-          data-size="invisible"
-          data-callback="__wagmiTurnstileCallback"
-          data-expired-callback="__wagmiTurnstileExpired"
-          data-error-callback="__wagmiTurnstileError"
         />
 
         <button
