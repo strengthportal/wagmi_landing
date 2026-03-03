@@ -6,6 +6,7 @@ interface Props {
   description: string;
   ogImage?: string;
   canonicalUrl?: string;
+  schema?: object;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
   description,
   ogImage = '/og-image.png',
   canonicalUrl = Astro.url.href,
+  schema,
 } = Astro.props;
 ---
 
@@ -42,6 +44,9 @@ const {
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Structured Data -->
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
