@@ -87,7 +87,6 @@ Instead of template libraries and drag-and-drop builders, you type — the way y
 | **Client delivery app** | ✅ | ✅ | ✅ | ✅ |
 | **Natural language input** | ❌ | ❌ | ❌ | ✅ |
 | **Client management** | ✅ | ✅ | ✅ | In progress |
-| **White-label branding** | Paid tier | ❌ | Paid tier | Coming |
 | **Built for solo coaches** | Partial | ✅ | Partial | ✅ |
 | **Availability** | Now | Now | Now | Beta |
 

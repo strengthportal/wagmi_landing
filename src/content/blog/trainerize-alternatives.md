@@ -77,7 +77,7 @@ Instead of a template library and drag-and-drop builder, you type. Shorthand, ab
 
 **What's better than Trainerize:** Programming speed. If you're spending 45+ minutes per client per week on building and formatting programs, WAGMI cuts that dramatically. It's the only platform in this space built around natural-language input rather than structured builders.
 
-**What's still building:** WAGMI is in private beta. It's not yet the all-in-one platform Trainerize is. Client management features are rolling out. If you need white-label branding, advanced automations, or nutrition tracking on day one, WAGMI isn't there yet.
+**What's still building:** WAGMI is in private beta. It's not yet the all-in-one platform Trainerize is. Client management features are rolling out. If you need advanced automations or nutrition tracking on day one, WAGMI isn't there yet.
 
 **Best for:** Independent coaches whose #1 frustration with Trainerize is how long programming takes — and who want to lock in founding pricing before public launch. [Beta spots are open](/).
 
@@ -90,7 +90,6 @@ Instead of a template library and drag-and-drop builder, you type. Shorthand, ab
 | **Programming speed** | Similar to Trainerize | Similar to Trainerize | Significantly faster |
 | **Natural language input** | ❌ | ❌ | ✅ |
 | **Client delivery app** | ✅ | ✅ | ✅ |
-| **White-label branding** | ❌ | ✅ (paid) | Coming |
 | **Nutrition tracking** | ❌ | ✅ | ❌ |
 | **Built for solo coaches** | ✅ | Partial | ✅ |
 | **Automations** | Basic | Advanced | Coming |
@@ -102,7 +101,7 @@ Instead of a template library and drag-and-drop builder, you type. Shorthand, ab
 
 **Switch to TrueCoach if:** Your main complaint about Trainerize is the interface clutter and enterprise UX. You want online coaching tools without gym management overhead. Programming speed isn't your top priority.
 
-**Switch to Everfit if:** You want more features than Trainerize, not fewer. You need white-label branding, nutrition tracking, or advanced automations. You're comfortable with a more complex setup.
+**Switch to Everfit if:** You want more features than Trainerize, not fewer. You need nutrition tracking, advanced automations, or a white-label client app. You're comfortable with a more complex setup.
 
 **Apply for WAGMI beta if:** Programming speed is the problem. You're tired of spending 30+ hours a month building and formatting programs. You're open to being an early user and want to lock in pricing before public launch.
 

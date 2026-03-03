@@ -63,7 +63,7 @@ The core difference is input method. Every other platform on this list requires 
 
 **What's better than TrueCoach:** Programming speed. If you currently spend 30–45 minutes building a client's weekly program in TrueCoach, WAGMI cuts that to minutes. It's a meaningfully different workflow, not just a cleaner version of the same one.
 
-**What's still building:** WAGMI is in private beta. It doesn't yet have TrueCoach's full feature set — white-label branding, advanced habit tracking, and some client management features are on the roadmap. If those are non-negotiable today, WAGMI isn't ready for you yet.
+**What's still building:** WAGMI is in private beta. It doesn't yet have TrueCoach's full feature set — client management is rolling out and advanced automations are on the roadmap. If those are non-negotiable today, WAGMI isn't ready for you yet.
 
 **Best for:** Coaches whose primary frustration is how long programming takes — not which features are missing. If you'd take speed over features, [beta spots are open](/).
 
@@ -75,7 +75,6 @@ The core difference is input method. Every other platform on this list requires 
 |---|---|---|---|
 | **Programming speed** | Similar to TrueCoach | Similar to TrueCoach | Significantly faster |
 | **Natural language input** | ❌ | ❌ | ✅ |
-| **White-label branding** | ✅ (paid tier) | ✅ | Coming |
 | **Nutrition tracking** | ✅ | ✅ | ❌ |
 | **Automations** | Basic | Advanced | Coming |
 | **Client delivery app** | ✅ | ✅ | ✅ |
@@ -86,7 +85,7 @@ The core difference is input method. Every other platform on this list requires 
 
 ## How to Choose
 
-**Switch to Trainerize if:** You need more features than TrueCoach and are comfortable with a more complex platform. Specifically useful if you need white-label branding, habit coaching, or nutrition tracking now.
+**Switch to Trainerize if:** You need more features than TrueCoach and are comfortable with a more complex platform. Specifically useful if you need habit coaching, nutrition tracking, or white-label branding now.
 
 **Switch to Everfit if:** You want the most complete feature set available and are ready to invest time in setup. Best for coaches whose business has grown to the point where advanced automations and analytics are worth the configuration cost.
 

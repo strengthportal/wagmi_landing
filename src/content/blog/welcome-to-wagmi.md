@@ -29,8 +29,7 @@ If you're a trainer who programs more than five clients a week and you're tired 
 
 Over the next few months, we'll be rolling out:
 
-- **Smart Client CRM** — Track injuries, PRs, check-ins, and preferences in one place that automatically informs every program you write
-- **Custom App Branding** — Your clients see your brand, not ours
+- **Client Management** — Track injuries, PRs, check-ins, and preferences in one place that automatically informs every program you write
 - **Automated Analytics** — Volume, intensity, and compliance charts built automatically from your programs
 
 We'll be sharing updates here on the blog, including deep dives into the training science behind the features, workflow tips, and stories from trainers in the beta.

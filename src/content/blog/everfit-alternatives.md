@@ -73,7 +73,6 @@ The input method is the difference. Every major platform — Everfit included �
 |---|---|---|---|
 | **Programming speed** | Similar to Everfit | Similar to Everfit | Significantly faster |
 | **Natural language input** | ❌ | ❌ | ✅ |
-| **White-label branding** | ✅ (paid tier) | ❌ | Coming |
 | **Nutrition tracking** | ✅ | ❌ | ❌ |
 | **Automations** | Basic | Basic | Coming |
 | **Wearable integrations** | ✅ | Limited | ❌ |
@@ -85,7 +84,7 @@ The input method is the difference. Every major platform — Everfit included �
 
 ## How to Choose
 
-**Switch to Trainerize if:** You need Everfit's feature depth but want a marginally lighter implementation. Especially if you need white-label branding and nutrition coaching and can't give those up.
+**Switch to Trainerize if:** You need Everfit's feature depth but want a marginally lighter implementation. Especially if you need nutrition coaching or white-label branding and can't give those up.
 
 **Switch to TrueCoach if:** You want to simplify significantly. You've identified that you only use the core features — program delivery, client tracking, communication — and the rest of Everfit was overhead you didn't need.
 
