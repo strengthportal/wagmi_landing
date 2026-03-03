@@ -94,6 +94,7 @@ export default async function handler(req: Request): Promise<Response> {
       headers: {
         Authorization: `Bearer ${process.env.INTERCOM_API_TOKEN}`,
         'Content-Type': 'application/json',
+        Accept: 'application/json',
         'Intercom-Version': '2.10',
       },
       body: JSON.stringify({
