@@ -119,15 +119,24 @@ export default async function handler(req: Request): Promise<Response> {
       return r.json();
     }),
 
-    // ── Database ──────────────────────────────────────────────────────────────
-    // TODO: implement once Josh picks the database
-    // Suggested schema (waitlist_signups):
+    // ── Database (api-nuevo) ───────────────────────────────────────────────────
+    // TODO: replace stub with POST to api-nuevo once the waitlist endpoint exists
+    // Repo: https://github.com/strengthportal/api-nuevo
+    //
+    // Expected call shape (to be confirmed with BE team):
+    //   POST <API_BASE_URL>/waitlist
+    //   Authorization: Bearer <API_SECRET_KEY>
+    //   { email, utm_source, utm_medium, utm_campaign, referrer, signup_page, signed_up_at }
+    //
+    // Suggested DB schema (waitlist_signups):
     //   id UUID PRIMARY KEY DEFAULT gen_random_uuid()
     //   email TEXT NOT NULL UNIQUE
     //   utm_source TEXT, utm_medium TEXT, utm_campaign TEXT
     //   referrer TEXT, signup_page TEXT
     //   intercom_contact_id TEXT  -- null if Intercom write failed
     //   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    //
+    // Add API_BASE_URL + API_SECRET_KEY to Vercel env vars when ready.
     Promise.resolve({ stubbed: true }),
   ]);
 
