@@ -8,8 +8,8 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: 'WAGMI Fitness Blog',
-    description: 'Coaching insights, workflow tips, and product updates from WAGMI Fitness — the fastest workout programming tool for independent personal trainers.',
+    title: 'Wagmi Fit Blog',
+    description: 'Coaching insights, workflow tips, and product updates from Wagmi Fit — the fastest workout programming tool for independent personal trainers.',
     site: context.site!,
     items: posts.map((post) => ({
       title: post.data.title,

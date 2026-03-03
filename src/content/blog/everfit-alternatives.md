@@ -2,7 +2,7 @@
 title: "The Best Everfit Alternatives in 2026"
 description: "Looking for an Everfit alternative? Here are the best options for independent personal trainers — compared on complexity, programming workflow, client delivery, and cost."
 pubDate: 2026-03-02
-author: "WAGMI Fitness"
+author: "Wagmi Fit"
 tags: ["software", "workflow", "coaching"]
 draft: false
 ---
@@ -53,7 +53,7 @@ TrueCoach is a meaningful step down in complexity from Everfit — and for many 
 
 ---
 
-### WAGMI Fitness *(Currently in Beta)*
+### Wagmi Fit *(Currently in Beta)*
 
 WAGMI takes a different approach than every other platform on this list. Rather than offering more features or fewer features, it focuses entirely on solving the problem every platform has in common: programming takes too long.
 

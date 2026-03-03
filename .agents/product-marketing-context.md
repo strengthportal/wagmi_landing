@@ -5,7 +5,7 @@
 ## Product Overview
 **One-liner:** The fastest way for personal trainers to build client programs — type how you think, get polished programs instantly.
 
-**What it does:** WAGMI is a workout programming tool for independent personal trainers. Trainers type in natural shorthand — messy, fast, the way they actually think — and the system instantly structures and formats it into polished, client-ready programs. No templates, no drag-and-drop builders, no reformatting. Just type and it's done.
+**What it does:** Wagmi Fit is a workout programming tool for independent personal trainers. Trainers type in natural shorthand — messy, fast, the way they actually think — and the system instantly structures and formats it into polished, client-ready programs. No templates, no drag-and-drop builders, no reformatting. Just type and it's done.
 
 **Product category:** Personal trainer software / workout programming software / coaching software
 
@@ -101,7 +101,7 @@
 | "My clients are already set up in Trainerize / I'd have to migrate" | Migration is a one-time cost. The ongoing time savings compound every single week. |
 | "Is it really faster or just different?" | The core workflow is: type shorthand → done. No template browsing, no drag-and-drop, no reformatting. The speed difference is immediate. |
 | "What if it structures something wrong?" | You review the output before delivery. It's a speed layer, not an autonomous system — you stay in control of the program. |
-| "I've tried other tools and gone back to spreadsheets" | WAGMI isn't a feature-bloated platform. It's a single workflow: type → structured → delivered. If you can type, you can use it. |
+| "I've tried other tools and gone back to spreadsheets" | Wagmi Fit isn't a feature-bloated platform. It's a single workflow: type → structured → delivered. If you can type, you can use it. |
 
 **Anti-persona:**
 - Gym chains or franchise operations with admin staff (we're built for solo operators)
@@ -114,7 +114,7 @@
 ## Switching Dynamics
 **Push (away from current tools):** Legacy platforms are slow; spreadsheet workflows break at scale; ChatGPT copy-paste is a workaround, not a solution; trainers feel like they're doing data entry.
 
-**Pull (toward WAGMI):** Programming at the speed of thought; no reformatting; polished client output; designed for how trainers actually work, not how gym admins work.
+**Pull (toward Wagmi Fit):** Programming at the speed of thought; no reformatting; polished client output; designed for how trainers actually work, not how gym admins work.
 
 **Habit (keeps them stuck):** Existing client setups in current tools; clients familiar with current delivery format; workflows already built around workarounds; sunk cost in learning current platform.
 

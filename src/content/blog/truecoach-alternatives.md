@@ -2,7 +2,7 @@
 title: "The Best TrueCoach Alternatives in 2026"
 description: "Looking to move on from TrueCoach? Here are the best alternatives for independent personal trainers — compared on programming workflow, client delivery, and what you actually get for the price."
 pubDate: 2026-03-02
-author: "WAGMI Fitness"
+author: "Wagmi Fit"
 tags: ["software", "workflow", "coaching"]
 draft: false
 ---
@@ -55,7 +55,7 @@ Everfit is the most fully-featured platform in the independent coaching space. W
 
 ---
 
-### WAGMI Fitness *(Currently in Beta)*
+### Wagmi Fit *(Currently in Beta)*
 
 WAGMI doesn't compete with TrueCoach on features — it competes on the one thing that costs coaches the most time: building programs.
 

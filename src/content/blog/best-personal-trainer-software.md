@@ -2,7 +2,7 @@
 title: "Best Personal Trainer Software in 2026 (For Independent Coaches)"
 description: "A no-fluff review of the best personal trainer software for independent coaches — covering programming speed, client delivery, and what actually matters when you're running a solo business."
 pubDate: 2026-03-02
-author: "WAGMI Fitness"
+author: "Wagmi Fit"
 tags: ["software", "workflow", "coaching"]
 draft: false
 ---
@@ -65,7 +65,7 @@ Everfit is the most comprehensive option — it covers programming, client manag
 
 ---
 
-### WAGMI Fitness *(Currently in Beta)*
+### Wagmi Fit *(Currently in Beta)*
 
 WAGMI is built around a different premise: trainers already know what to program. The software should get out of the way.
 

@@ -2,7 +2,7 @@
 title: "The Best Trainerize Alternatives in 2026"
 description: "Looking to replace Trainerize? Here are the best alternatives for independent personal trainers — compared on programming speed, client delivery, and overall friction."
 pubDate: 2026-03-02
-author: "WAGMI Fitness"
+author: "Wagmi Fit"
 tags: ["software", "workflow", "coaching"]
 draft: false
 ---
@@ -69,7 +69,7 @@ Worth mentioning because a lot of coaches already use this — not as a recommen
 
 ---
 
-### WAGMI Fitness *(Currently in Beta)*
+### Wagmi Fit *(Currently in Beta)*
 
 WAGMI is a different kind of alternative — it doesn't try to match Trainerize feature for feature. It attacks the root problem: programming takes too long because the interface makes you work against the way you think.
 

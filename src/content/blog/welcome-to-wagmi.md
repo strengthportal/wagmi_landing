@@ -1,8 +1,8 @@
 ---
-title: "Welcome to WAGMI Fitness"
+title: "Welcome to Wagmi Fit"
 description: "We're building the fastest workout programming tool for independent personal trainers. Here's why we started, what we're building, and what's coming next."
 pubDate: 2026-02-01
-author: "WAGMI Fitness"
+author: "Wagmi Fit"
 tags: ["announcement"]
 draft: false
 ---
