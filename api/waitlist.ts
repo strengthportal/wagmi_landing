@@ -86,38 +86,71 @@ export default async function handler(req: Request): Promise<Response> {
   const signedUpAt = new Date().toISOString();
   const normalizedEmail = email.trim().toLowerCase();
 
-  // Parallel writes — both are fire-and-forget; failures are logged but never block the user
+  const intercomHeaders = {
+    Authorization: `Bearer ${process.env.INTERCOM_API_TOKEN}`,
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    'Intercom-Version': '2.10',
+  };
+
+  // Parallel writes — fire-and-forget; failures are logged but never block the user
   const [intercomResult] = await Promise.allSettled([
     // ── Intercom ──────────────────────────────────────────────────────────────
+    // Step 1: create the contact (email + role only — always works)
     fetch('https://api.intercom.io/contacts', {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.INTERCOM_API_TOKEN}`,
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Intercom-Version': '2.10',
-      },
-      body: JSON.stringify({
-        role: 'lead',
-        email: normalizedEmail,
-        custom_attributes: {
-          utm_source: utm_source || null,
-          utm_medium: utm_medium || null,
-          utm_campaign: utm_campaign || null,
-          referrer: referrer || null,
-          signup_page: signup_page || '/',
-          signed_up_at: signedUpAt,
-          lead_source: 'wagmi.fit_waitlist',
-        },
-      }),
+      headers: intercomHeaders,
+      body: JSON.stringify({ role: 'lead', email: normalizedEmail }),
     }).then(async (r) => {
-      // 409 = contact already exists in Intercom — treat as success
-      if (r.status === 409) return { existing: true };
+      // 409 = duplicate — merge and return the existing contact
+      if (r.status === 409) {
+        const body = await r.json() as { errors?: Array<{ field?: string; message?: string }> };
+        // Intercom returns the conflicting id in the error — search for it
+        const searchRes = await fetch(
+          `https://api.intercom.io/contacts/search`,
+          {
+            method: 'POST',
+            headers: intercomHeaders,
+            body: JSON.stringify({ query: { field: 'email', operator: '=', value: normalizedEmail } }),
+          }
+        );
+        const searchData = await searchRes.json() as { data?: Array<{ id: string }> };
+        return searchData.data?.[0] ?? body;
+      }
       if (!r.ok) {
         const text = await r.text();
         throw new Error(`Intercom ${r.status}: ${text}`);
       }
-      return r.json();
+      return r.json() as Promise<{ id: string }>;
+    }).then(async (contact) => {
+      // Step 2: patch custom attributes — best-effort, won't break contact creation
+      // Note: custom data attributes must be pre-created in Intercom Settings →
+      // Custom data attributes before they can be populated here.
+      const contactId = (contact as { id?: string }).id;
+      if (!contactId) return contact;
+
+      const patchRes = await fetch(`https://api.intercom.io/contacts/${contactId}`, {
+        method: 'PATCH',
+        headers: intercomHeaders,
+        body: JSON.stringify({
+          custom_attributes: {
+            utm_source: utm_source || null,
+            utm_medium: utm_medium || null,
+            utm_campaign: utm_campaign || null,
+            referrer: referrer || null,
+            signup_page: signup_page || '/',
+            signed_up_at: signedUpAt,
+            lead_source: 'wagmi.fit_waitlist',
+          },
+        }),
+      });
+
+      if (!patchRes.ok) {
+        const text = await patchRes.text();
+        console.error(`[waitlist] Custom attributes patch failed ${patchRes.status}: ${text}`);
+      }
+
+      return contact;
     }),
 
     // ── Database (api-nuevo) ───────────────────────────────────────────────────
