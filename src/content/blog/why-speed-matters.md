@@ -36,3 +36,7 @@ No drag and drop. No template browsing. No reformatting.
 You type the way you already type when you're thinking through a program. WAGMI handles the rest.
 
 The result isn't just faster programming. It's a sustainable business model where you can take on more clients, deliver better programs, and still have energy left at the end of the day for the part of the job you actually love: coaching.
+
+---
+
+*We're All Gonna Make It.*

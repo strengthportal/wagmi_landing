@@ -137,3 +137,7 @@ The fastest workflow is one where you type in natural language and get structure
 ### Is there personal trainer software specifically for independent coaches?
 
 Most platforms were designed for gym chains or group fitness businesses. TrueCoach is the most explicitly built for online coaching. WAGMI is built specifically for independent trainers — the entire design is optimized for one person programming multiple clients without admin overhead.
+
+---
+
+*We're All Gonna Make It.*

@@ -125,3 +125,7 @@ Yes. Everfit allows you to export client data, and most competing platforms have
 ### Is there a simpler alternative to Everfit that's still professional?
 
 TrueCoach is the most commonly recommended step down from Everfit in terms of simplicity. WAGMI is a newer option in beta that takes an even leaner approach — focused on programming speed rather than feature breadth. For coaches whose main frustration with Everfit is complexity rather than missing features, either can be a significant quality-of-life improvement.
+
+---
+
+*We're All Gonna Make It.*

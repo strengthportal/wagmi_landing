@@ -126,3 +126,7 @@ TrueCoach allows you to export client data. Program history and exercise logs ca
 ### What personal trainer software is fastest for building programs?
 
 Of the current options, WAGMI is the only platform built specifically around programming speed. It accepts natural language and shorthand input rather than requiring exercise-by-exercise template building. It's currently in private beta. All other major platforms — TrueCoach, Trainerize, Everfit — use structured builders that require a similar time investment per program.
+
+---
+
+*We're All Gonna Make It.*

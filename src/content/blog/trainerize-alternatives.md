@@ -140,3 +140,7 @@ It can, but the risk is manageable. Clients follow coaches, not platforms. If yo
 ### Is there personal trainer software that doesn't use templates?
 
 Most personal trainer software is built around template libraries and structured builders. WAGMI is currently the only platform in beta that accepts natural language and shorthand input — you write programs the way you'd write notes, and the system structures them automatically. It's in private beta with early access available.
+
+---
+
+*We're All Gonna Make It.*
