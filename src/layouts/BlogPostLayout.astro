@@ -7,12 +7,13 @@ interface Props {
   title: string;
   description: string;
   pubDate: Date;
+  updatedDate?: Date;
   author: string;
   tags: string[];
   image?: string;
 }
 
-const { title, description, pubDate, author, tags, image } = Astro.props;
+const { title, description, pubDate, updatedDate, author, tags, image } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -26,7 +27,7 @@ const articleSchema = {
   headline: title,
   description: description,
   datePublished: pubDate.toISOString(),
-  dateModified: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
   author: {
     '@type': 'Organization',
     name: author,
@@ -41,7 +42,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Wagmi Fit Blog`} description={description} ogImage={image} schema={articleSchema}>
+<BaseLayout title={`${title} | Wagmi Fit`} description={description} ogImage={image} schema={articleSchema}>
   <Header />
   <main class="py-16 md:py-24">
     <div class="mx-auto max-w-3xl px-6">
