@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 declare global {
   interface Window {
+    gtag?: (...args: unknown[]) => void;
     turnstile?: {
       render: (
         container: HTMLElement,
@@ -117,6 +118,12 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
       const data = (await res.json()) as { success: boolean; error?: string };
 
       if (data.success) {
+        window.gtag?.('event', 'waitlist_signup', {
+          form_variant: variant,
+          utm_source: params.get('utm_source') ?? undefined,
+          utm_medium: params.get('utm_medium') ?? undefined,
+          utm_campaign: params.get('utm_campaign') ?? undefined,
+        });
         setFormState('success');
       } else {
         setFormState('error');
