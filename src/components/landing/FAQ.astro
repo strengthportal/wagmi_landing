@@ -1,0 +1,77 @@
+---
+const faqs = [
+  {
+    question: 'How is Wagmi Fit different from Trainerize or TrueCoach?',
+    answer:
+      'Trainerize and TrueCoach were built around drag-and-drop program builders — they work fine if you have time to click through menus. Wagmi Fit takes a different approach: you type your workout in plain text, shorthand, whatever comes naturally, and we structure it instantly into a polished program. For independent trainers with 10–30 clients, the time savings add up fast.',
+  },
+  {
+    question: 'What kind of personal trainers is Wagmi Fit built for?',
+    answer:
+      'Independent personal trainers running solo coaching businesses — whether online, in-person, or hybrid. If you\'re writing programs for multiple clients and spending too much time on formatting and admin instead of coaching, Wagmi Fit is built for you. It\'s not designed for large gym chains or team-based operations.',
+  },
+  {
+    question: 'Is Wagmi Fit free?',
+    answer:
+      'Wagmi Fit is free during the current beta. Early access users get full access to the platform at no cost while we refine the product. Paid plans will be introduced after the beta period, and early users will receive preferential pricing.',
+  },
+  {
+    question: 'How does the workout programming actually work?',
+    answer:
+      'You type your workout notes the way you naturally think — shorthand, abbreviations, quick notes like "squat 4x8 @70%, bench 3x10, db rows 3x12." Wagmi Fit parses that input, matches exercises to your library, calculates percentages, and formats it into a structured program your client can follow in the mobile app. No drag-and-drop required.',
+  },
+  {
+    question: 'Do my clients need to download an app?',
+    answer:
+      'Yes — clients get a mobile app for logging their workouts in real time. Sets, reps, RPE, and notes are captured as they train and synced instantly so you can see how sessions are going. The app is designed to be simple enough that clients actually use it.',
+  },
+  {
+    question: 'When can I get access?',
+    answer:
+      'We\'re currently in a limited beta. Join the waitlist and you\'ll be added to the next cohort as spots open up. Beta users get free access and early input into what gets built next.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<section id="faq" class="py-24 md:py-32 border-t border-slate-200">
+  <div class="mx-auto max-w-3xl px-6">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl font-medium tracking-tight text-slate-900 md:text-4xl">
+        Frequently asked questions
+      </h2>
+      <p class="mt-4 text-lg text-slate-500">
+        Everything you need to know before joining the beta.
+      </p>
+    </div>
+
+    <div class="divide-y divide-slate-200">
+      {faqs.map((faq) => (
+        <details class="group py-5">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-slate-900 marker:content-none list-none">
+            {faq.question}
+            <iconify-icon
+              icon="solar:alt-arrow-down-linear"
+              class="shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-180"
+            ></iconify-icon>
+          </summary>
+          <p class="mt-4 text-sm leading-relaxed text-slate-500">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
