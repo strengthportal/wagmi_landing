@@ -29,18 +29,36 @@
           <p class="text-sm text-slate-500 mb-6">Write workouts however you think — shorthand, full sentences, whatever. WAGMI structures it instantly into trackable programs. Just write and go.</p>
         </div>
 
-        <!-- Code/Logic visual -->
-        <div class="mt-6 rounded-xl border border-slate-200 bg-slate-900 p-4 font-mono text-xs text-slate-300 w-full md:w-[120%] shadow-lg relative z-10">
-          <div class="flex gap-2 mb-3">
-            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+        <!-- Speed visual: raw input → structured output -->
+        <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 overflow-hidden w-full shadow-sm relative z-10">
+          <!-- Raw input -->
+          <div class="px-4 py-3 bg-white border-b border-slate-200">
+            <p class="text-[10px] font-medium text-slate-400 uppercase tracking-widest mb-1.5">You type</p>
+            <p class="text-xs font-mono text-slate-600">bench 3x8, cable rows 3x10, lat raises 4x15</p>
           </div>
-          <p><span class="text-pink-400">const</span> <span class="text-blue-300">program</span> = <span class="text-indigo-300">await</span> wagmi.<span class="text-green-300">structure</span>({'{'}</p>
-          <p class="pl-4">client: <span class="text-amber-300">"Sarah Connor"</span>,</p>
-          <p class="pl-4">rawInput: <span class="text-amber-300">"day 1 upper. bench 3x8, cable rows 3x10, lat raises 4x15..."</span>,</p>
-          <p class="pl-4">context: [<span class="text-amber-300">"mild knee pain"</span>, <span class="text-amber-300">"db only"</span>]</p>
-          <p>{'}'});</p>
+          <!-- Speed indicator -->
+          <div class="flex items-center gap-3 px-4 py-2 bg-indigo-50 border-b border-indigo-100">
+            <iconify-icon icon="solar:bolt-bold" class="text-indigo-500 text-sm shrink-0"></iconify-icon>
+            <div class="flex-1 h-1 bg-indigo-100 rounded-full overflow-hidden">
+              <div class="h-full w-3/4 bg-indigo-400 rounded-full"></div>
+            </div>
+            <span class="text-[10px] font-semibold text-indigo-600 shrink-0">0.3s</span>
+          </div>
+          <!-- Structured output -->
+          <div class="divide-y divide-slate-100">
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="text-xs font-medium text-slate-700">Bench Press</span>
+              <span class="text-[10px] text-slate-400">3 sets × 8 reps</span>
+            </div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="text-xs font-medium text-slate-700">Seated Cable Rows</span>
+              <span class="text-[10px] text-slate-400">3 sets × 10 reps</span>
+            </div>
+            <div class="flex items-center justify-between px-4 py-2.5">
+              <span class="text-xs font-medium text-slate-700">DB Lateral Raises</span>
+              <span class="text-[10px] text-slate-400">4 sets × 15 reps</span>
+            </div>
+          </div>
         </div>
       </div>
 
