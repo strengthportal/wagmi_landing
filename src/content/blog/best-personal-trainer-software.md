@@ -124,7 +124,7 @@ Trainerize is the most widely adopted platform among personal trainers, followed
 
 ### How much does personal trainer software cost?
 
-Pricing varies by platform and client count. Trainerize starts around $10–35/month for small rosters, scaling up with client volume. TrueCoach and Everfit are similarly tiered. Most platforms charge per active client or per tier. WAGMI is free during beta with founding pricing locked in for early users.
+Pricing varies by platform and client count. Trainerize starts around $10–35/month for small rosters, scaling up with client volume. TrueCoach and Everfit are similarly tiered. Most platforms charge per active client or per tier. WAGMI FIT is currently in beta — join the waitlist for early access and preferential pricing when plans launch.
 
 ### Can I use ChatGPT to write workout programs for clients?
 
