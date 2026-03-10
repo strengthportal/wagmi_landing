@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --color-parchment: #F3ECE2;
+  --color-parchment-alt: #EAE2D6;
+  --color-card: #FAF7F2;
+  --color-ink: #1A1A2E;
+  --color-ink-muted: #7A7268;
+  --color-cobalt: #2556C4;
+  --color-cobalt-dark: #1E47A8;
+  --color-cobalt-soft: #E8EFFA;
+  --color-dusty: #7A9AC4;
+  --color-warm-border: #D9D0C4;
+}
+
 @keyframes fade-in-up {
     0% { opacity: 0; transform: translateY(1rem); }
     100% { opacity: 1; transform: translateY(0); }
@@ -17,8 +30,8 @@
 .delay-300 { animation-delay: 300ms; }
 
 /* Custom UI element transitions */
-.toggle-checkbox:checked { right: 0; border-color: #4F46E5; }
-.toggle-checkbox:checked + .toggle-label { background-color: #4F46E5; }
+.toggle-checkbox:checked { right: 0; border-color: #2556C4; }
+.toggle-checkbox:checked + .toggle-label { background-color: #2556C4; }
 .toggle-checkbox:checked + .toggle-label:after { transform: translateX(100%); border-color: white; }
 
 @layer base {
@@ -26,9 +39,10 @@
         font-family: 'Inter', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: #F3ECE2;
     }
     ::selection {
-        background-color: #e0e7ff;
-        color: #3730a3;
+        background-color: #2556C4;
+        color: #FAF7F2;
     }
 }

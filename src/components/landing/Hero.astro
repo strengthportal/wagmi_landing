@@ -5,47 +5,47 @@ import WaitlistForm from '../WaitlistForm.tsx';
 <section class="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
   <div class="mx-auto max-w-7xl px-6 text-center">
     <div class="animate-fade-in-up">
-      <div class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium uppercase tracking-widest text-slate-600 mb-8">
-        <span class="mr-2 flex h-2 w-2 rounded-full bg-indigo-500"></span>
+      <div class="inline-flex items-center rounded-full border border-warm-border bg-parchment-alt px-3 py-1 text-xs font-medium uppercase tracking-widest text-ink-muted mb-8">
+        <span class="mr-2 flex h-2 w-2 rounded-full bg-cobalt"></span>
         Join 400+ trainers on the waitlist
       </div>
 
-      <p class="text-sm font-medium text-slate-400 tracking-wide mb-4">We're All Gonna Make It</p>
+      <p class="text-sm font-medium text-ink-muted tracking-wide mb-4">We're All Gonna Make It</p>
 
-      <h1 class="mx-auto max-w-4xl text-5xl font-semibold tracking-tight text-slate-900 md:text-7xl leading-[1.1] text-balance">
-        The fastest <span class="text-indigo-600">AI-powered</span> platform for personal trainers.
+      <h1 class="mx-auto max-w-4xl text-5xl font-semibold tracking-tight text-ink md:text-7xl leading-[1.1] text-balance">
+        The fastest <span class="text-cobalt">AI-powered</span> platform for personal trainers.
       </h1>
 
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-500 md:text-xl leading-relaxed">
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-ink-muted md:text-xl leading-relaxed">
         Program clients, manage workouts, and track progress — all at the speed you actually think. Built for independent trainers who move fast.
       </p>
 
       <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
         <WaitlistForm client:load variant="hero" />
       </div>
-      <p class="mt-4 text-xs font-medium text-slate-500">No credit card required.</p>
+      <p class="mt-4 text-xs font-medium text-ink-muted">No credit card required.</p>
     </div>
 
     <!-- Demo Framing -->
-    <p class="mt-16 text-lg text-slate-500 text-center">See it in action. Type how you actually think — we handle the rest.</p>
+    <p class="mt-16 text-lg text-ink-muted text-center">See it in action. Type how you actually think — we handle the rest.</p>
 
     <!-- Hero Mockup -->
-    <div class="animate-fade-in-up delay-200 mx-auto mt-6 max-w-5xl rounded-xl border border-slate-200 bg-slate-50 p-2 sm:p-4 shadow-xl shadow-slate-200/50">
-      <div class="rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col md:flex-row h-auto md:h-[32rem]">
+    <div class="animate-fade-in-up delay-200 mx-auto mt-6 max-w-5xl rounded-xl border border-warm-border bg-parchment-alt p-2 sm:p-4 shadow-xl">
+      <div class="rounded-lg border border-warm-border bg-card overflow-hidden flex flex-col md:flex-row h-auto md:h-[32rem]">
 
         <!-- Left: Raw Input Interface -->
-        <div class="w-full md:w-5/12 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col bg-slate-50/50">
-          <div class="border-b border-slate-200 px-4 py-3 bg-white flex items-center justify-between">
+        <div class="w-full md:w-5/12 border-b md:border-b-0 md:border-r border-warm-border flex flex-col bg-parchment-alt/50">
+          <div class="border-b border-warm-border px-4 py-3 bg-card flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <iconify-icon icon="solar:document-text-linear" stroke-width="1.5" class="text-indigo-600 text-lg"></iconify-icon>
-              <span class="text-sm font-medium tracking-tight text-slate-900">Strength - A</span>
+              <iconify-icon icon="solar:document-text-linear" stroke-width="1.5" class="text-cobalt text-lg"></iconify-icon>
+              <span class="text-sm font-medium tracking-tight text-ink">Strength - A</span>
             </div>
-            <span class="text-xs text-slate-400">4/6/26</span>
+            <span class="text-xs text-ink-muted">4/6/26</span>
           </div>
 
           <div class="flex-1 relative p-0 flex flex-col">
             <textarea
-              class="w-full h-full bg-transparent border-none resize-none p-5 text-sm font-mono text-slate-600 focus:ring-0 focus:outline-none leading-relaxed"
+              class="w-full h-full bg-transparent border-none resize-none p-5 text-sm font-mono text-ink-muted focus:ring-0 focus:outline-none leading-relaxed"
               placeholder="Type workout here..."
               disabled
             >Sarah Hypertrophy Block - Week 1
@@ -60,70 +60,69 @@ Day 2: Lower
 rdls 3x 8-10 (sub for squat)
 bulgarian split squats 3x 8-10
 leg extensions 3x12-15</textarea>
-
           </div>
         </div>
 
         <!-- Right: Generated Output UI -->
-        <div class="w-full md:w-7/12 bg-white flex flex-col relative">
-          <div class="absolute inset-0 bg-white/50 backdrop-blur-[1px] flex items-center justify-center z-10" style="animation: fadeOut 0.5s 1.5s forwards;">
-            <div class="flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm border border-slate-200">
-              <iconify-icon icon="solar:settings-minimalistic-linear" class="animate-spin text-indigo-600"></iconify-icon>
-              <span class="text-xs font-medium text-slate-600 uppercase tracking-widest">Building...</span>
+        <div class="w-full md:w-7/12 bg-card flex flex-col relative">
+          <div class="absolute inset-0 bg-card/50 backdrop-blur-[1px] flex items-center justify-center z-10" style="animation: fadeOut 0.5s 1.5s forwards;">
+            <div class="flex items-center gap-2 rounded-full bg-card px-4 py-2 shadow-sm border border-warm-border">
+              <iconify-icon icon="solar:settings-minimalistic-linear" class="animate-spin text-cobalt"></iconify-icon>
+              <span class="text-xs font-medium text-ink-muted uppercase tracking-widest">Building...</span>
             </div>
           </div>
 
-          <div class="border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+          <div class="border-b border-warm-border px-6 py-4 flex items-center justify-between">
             <div>
-              <h3 class="text-base font-medium tracking-tight text-slate-900">Sarah's Hypertrophy Block</h3>
-              <p class="text-xs text-slate-500 mt-0.5">4 Weeks • 3x/Week • Knee-Friendly</p>
+              <h3 class="text-base font-medium tracking-tight text-ink">Sarah's Hypertrophy Block</h3>
+              <p class="text-xs text-ink-muted mt-0.5">4 Weeks • 3x/Week • Knee-Friendly</p>
             </div>
             <div class="flex items-center gap-2">
-              <button class="inline-flex h-8 items-center justify-center rounded-md border border-slate-200 bg-white px-3 text-xs font-medium text-slate-900 hover:bg-slate-50">Assign to Client</button>
+              <button class="inline-flex h-8 items-center justify-center rounded-md border border-warm-border bg-card px-3 text-xs font-medium text-ink hover:bg-parchment-alt">Assign to Client</button>
             </div>
           </div>
 
           <div class="flex-1 overflow-y-auto p-6 space-y-6">
             <!-- Day 1 -->
             <div>
-              <h4 class="text-sm font-medium tracking-tight text-slate-900 mb-3 flex items-center gap-2">
-                <iconify-icon icon="solar:calendar-date-linear" class="text-slate-400"></iconify-icon>
+              <h4 class="text-sm font-medium tracking-tight text-ink mb-3 flex items-center gap-2">
+                <iconify-icon icon="solar:calendar-date-linear" class="text-ink-muted"></iconify-icon>
                 Day 1: Upper Body Focus
               </h4>
-              <div class="rounded-lg border border-slate-200 overflow-hidden">
-                <div class="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-200">
-                  <span class="text-sm font-medium text-slate-700">Dumbbell Bench Press</span>
-                  <span class="text-xs text-slate-500">3 sets &times; 8-10 reps</span>
+              <div class="rounded-lg border border-warm-border overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 bg-parchment-alt border-b border-warm-border">
+                  <span class="text-sm font-medium text-ink">Dumbbell Bench Press</span>
+                  <span class="text-xs text-ink-muted">3 sets &times; 8-10 reps</span>
                 </div>
-                <div class="flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200">
-                  <span class="text-sm font-medium text-slate-700">Seated Cable Rows</span>
-                  <span class="text-xs text-slate-500">3 sets &times; 10-12 reps</span>
+                <div class="flex items-center justify-between px-4 py-3 bg-card border-b border-warm-border">
+                  <span class="text-sm font-medium text-ink">Seated Cable Rows</span>
+                  <span class="text-xs text-ink-muted">3 sets &times; 10-12 reps</span>
                 </div>
-                <div class="flex items-center justify-between px-4 py-3 bg-white">
-                  <span class="text-sm font-medium text-slate-700">Dumbbell Lateral Raises</span>
-                  <span class="text-xs text-slate-500">4 sets &times; 15 reps</span>
+                <div class="flex items-center justify-between px-4 py-3 bg-card">
+                  <span class="text-sm font-medium text-ink">Dumbbell Lateral Raises</span>
+                  <span class="text-xs text-ink-muted">4 sets &times; 15 reps</span>
                 </div>
               </div>
             </div>
 
             <!-- Day 2 -->
             <div>
-              <h4 class="text-sm font-medium tracking-tight text-slate-900 mb-3 flex items-center gap-2">
-                <iconify-icon icon="solar:calendar-date-linear" class="text-slate-400"></iconify-icon>
+              <h4 class="text-sm font-medium tracking-tight text-ink mb-3 flex items-center gap-2">
+                <iconify-icon icon="solar:calendar-date-linear" class="text-ink-muted"></iconify-icon>
                 Day 2: Lower Body (Knee-Friendly)
               </h4>
-              <div class="rounded-lg border border-slate-200 overflow-hidden">
-                <div class="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-200">
-                  <span class="text-sm font-medium text-slate-700">Romanian Deadlifts (RDLs)</span>
-                  <span class="text-xs text-cyan-700 bg-cyan-50 border border-cyan-100 px-2 py-0.5 rounded-full">Alt for Squat</span>
+              <div class="rounded-lg border border-warm-border overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 bg-parchment-alt border-b border-warm-border">
+                  <span class="text-sm font-medium text-ink">Romanian Deadlifts (RDLs)</span>
+                  <span class="text-xs text-dusty bg-cobalt-soft border border-cobalt-soft px-2 py-0.5 rounded-full">Alt for Squat</span>
                 </div>
-                <div class="flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200">
-                  <span class="text-sm font-medium text-slate-700">Bulgarian Split Squats</span>
-                  <span class="text-xs text-slate-500">3 sets &times; 8-10 reps</span>
+                <div class="flex items-center justify-between px-4 py-3 bg-card border-b border-warm-border">
+                  <span class="text-sm font-medium text-ink">Bulgarian Split Squats</span>
+                  <span class="text-xs text-ink-muted">3 sets &times; 8-10 reps</span>
                 </div>
-                <div class="flex items-center justify-between px-4 py-3 bg-white">
-                  <span class="text-sm font-medium text-slate-700">Leg Extensions</span>
-                  <span class="text-xs text-slate-500">3 sets &times; 12-15 reps</span>
+                <div class="flex items-center justify-between px-4 py-3 bg-card">
+                  <span class="text-sm font-medium text-ink">Leg Extensions</span>
+                  <span class="text-xs text-ink-muted">3 sets &times; 12-15 reps</span>
                 </div>
               </div>
             </div>

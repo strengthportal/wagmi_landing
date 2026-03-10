@@ -140,8 +140,8 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
   if (formState === 'success') {
     return (
       <div className="flex flex-col items-center gap-1.5 py-3 text-center">
-        <p className="text-sm font-medium text-indigo-600">You're on the list!</p>
-        <p className="text-xs text-slate-500">We'll be in touch when it's your turn.</p>
+        <p className="text-sm font-medium text-cobalt">You're on the list!</p>
+        <p className="text-xs text-ink-muted">We'll be in touch when it's your turn.</p>
       </div>
     );
   }
@@ -176,17 +176,17 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
           placeholder={isHero ? 'Enter your email' : 'coach@example.com'}
           required
           disabled={formState === 'submitting'}
-          className="flex h-12 w-full rounded-md border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm transition-all focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-60"
+          className="flex h-12 w-full rounded-md border border-warm-border bg-card px-4 py-2 text-sm text-ink placeholder:text-ink-muted shadow-sm transition-all focus:border-cobalt focus:outline-none focus:ring-2 focus:ring-cobalt/20 disabled:opacity-60"
         />
 
         <button
           type="submit"
           disabled={formState === 'submitting'}
           className={[
-            'inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-indigo-600 px-6 font-medium text-white transition-all hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60',
+            'inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-cobalt px-6 font-medium text-white transition-all hover:bg-cobalt-dark focus:outline-none focus:ring-2 focus:ring-cobalt focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60',
             isHero
-              ? 'text-base hover:-translate-y-[1px] hover:shadow-lg focus:ring-offset-white'
-              : 'w-full text-sm hover:shadow-md focus:ring-offset-slate-50 sm:w-auto',
+              ? 'text-base hover:-translate-y-[1px] hover:shadow-lg focus:ring-offset-card'
+              : 'w-full text-sm hover:shadow-md focus:ring-offset-parchment-alt sm:w-auto',
           ].join(' ')}
         >
           {formState === 'submitting' ? 'Joining…' : isHero ? 'Join Waitlist' : 'Request Access'}

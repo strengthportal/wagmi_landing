@@ -2,25 +2,25 @@
 import WaitlistForm from '../WaitlistForm.tsx';
 ---
 
-<section id="waitlist" class="py-24 md:py-32 bg-white">
+<section id="waitlist" class="py-24 md:py-32 bg-parchment">
   <div class="mx-auto max-w-4xl px-6 text-center">
-    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-10 md:p-16 shadow-sm relative overflow-hidden">
+    <div class="rounded-2xl border border-warm-border bg-parchment-alt p-10 md:p-16 shadow-sm relative overflow-hidden">
       <!-- Decorative background elements -->
-      <div class="absolute -top-24 -right-24 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-50"></div>
-      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-cyan-50 rounded-full blur-3xl opacity-50"></div>
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-cobalt-soft rounded-full blur-3xl opacity-50"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-cobalt-soft rounded-full blur-3xl opacity-50"></div>
 
       <div class="relative z-10">
-        <h2 class="text-3xl font-medium tracking-tight text-slate-900 md:text-4xl">
+        <h2 class="text-3xl font-medium tracking-tight text-ink md:text-4xl">
           Ready to get your time back?
         </h2>
-        <p class="mx-auto mt-4 max-w-xl text-lg text-slate-500">
+        <p class="mx-auto mt-4 max-w-xl text-lg text-ink-muted">
           Join independent trainers who are scaling their business without scaling their screen time. Request early access today.
         </p>
 
         <div class="mt-8">
           <WaitlistForm client:load variant="cta" />
         </div>
-        <p class="mt-4 text-xs text-slate-400">Limited spots available in the current beta cohort.</p>
+        <p class="mt-4 text-xs text-ink-muted">Limited spots available in the current beta cohort.</p>
       </div>
     </div>
   </div>

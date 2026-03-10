@@ -48,28 +48,28 @@ const faqSchema = {
 
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-<section id="faq" class="py-24 md:py-32 border-t border-slate-200">
+<section id="faq" class="py-24 md:py-32 border-t border-warm-border">
   <div class="mx-auto max-w-3xl px-6">
     <div class="mb-12 text-center">
-      <h2 class="text-3xl font-medium tracking-tight text-slate-900 md:text-4xl">
+      <h2 class="text-3xl font-medium tracking-tight text-ink md:text-4xl">
         Frequently asked questions
       </h2>
-      <p class="mt-4 text-lg text-slate-500">
+      <p class="mt-4 text-lg text-ink-muted">
         Everything you need to know before joining the beta.
       </p>
     </div>
 
-    <div class="divide-y divide-slate-200">
+    <div class="divide-y divide-warm-border">
       {faqs.map((faq) => (
         <details class="group py-5">
-          <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-slate-900 marker:content-none list-none">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-ink marker:content-none list-none">
             {faq.question}
             <iconify-icon
               icon="solar:alt-arrow-down-linear"
-              class="shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-180"
+              class="shrink-0 text-ink-muted transition-transform duration-200 group-open:rotate-180"
             ></iconify-icon>
           </summary>
-          <p class="mt-4 text-sm leading-relaxed text-slate-500">{faq.answer}</p>
+          <p class="mt-4 text-sm leading-relaxed text-ink-muted">{faq.answer}</p>
         </details>
       ))}
     </div>
