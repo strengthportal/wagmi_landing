@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "How to Program Workouts for 20+ Clients Without Losing Your Weekend"
 description: "Struggling with programming workouts for multiple clients? Here are practical tips to build faster, stay organized, and actually reclaim your time."
@@ -58,9 +57,9 @@ Answering client check-ins, jumping into a program, responding to a DM, building
 
 Batch your programming into dedicated blocks. Some trainers do it all Sunday morning. Others do it Tuesday and Thursday evenings. The specific schedule matters less than the consistency.
 
-Take Marcus, a trainer running 22 online clients. He used to program on the fly — a client checks in, he builds their next week, sends it over. By the end of the week he'd spent hours programming across five different sessions and had no idea where the time went.
+Take Sarah, a trainer running 22 online clients. She used to program on the fly — a client checks in, she builds their next week, sends it over. By the end of the week she'd spent hours programming across five different sessions and had no idea where the time went.
 
-He switched to a single Sunday morning block, 8am–11am, everything off, no phones. Same 22 clients, same quality programs. He finished in three hours instead of seven — and the only thing that changed was batching and a faster workflow.
+She switched to a single Sunday morning block, 8am–11am, everything off, no phones. Same 22 clients, same quality programs. She finished in three hours instead of seven — and the only thing that changed was batching and a faster workflow.
 
 ### 4. Stop Rebuilding What You've Already Built
 
@@ -84,23 +83,21 @@ The best workflow for programming workouts for multiple clients is one that gets
 
 ## A Closer Look: Programming at Scale in Practice
 
-Let's come back to Marcus.
+Let's look at what this looks like for a trainer with 22 clients — mostly online, a few hybrid. Good programmer, clients get results, retention is high. But around 18 clients, the weekend programming sessions started bleeding into Sunday evenings and occasionally into Monday mornings.
 
-He's built to 22 clients over two years. Mostly online, a few hybrid. He's a good programmer — his clients get results, retention is high, he gets referrals. But he hit a wall at around 18 clients where the weekend programming sessions started bleeding into Sunday evenings and occasionally into Monday mornings.
+Her clients span a few categories: general strength, fat loss + muscle retention, a couple of competitive powerlifters, and a few athletes with sport-specific work. She has 5 base templates that cover most of those buckets.
 
-His clients span a few categories: general strength (8 clients), fat loss + muscle retention (9 clients), two competitive powerlifters, and three athletes with sport-specific work. He has 5 base templates that cover most of those buckets.
+Current process: Sunday morning, open client list, pull up each person's previous program and check-in notes, adjust for the new week, format it, send it. Writing programs in plain shorthand in a doc and then manually moving it into the delivery tool.
 
-His current process: Sunday morning, he opens his client list, pulls up each person's previous program and check-in notes, adjusts the program for the new week, formats it, and sends it. He's writing programs in plain shorthand in a doc and then manually moving it into his delivery tool.
+That manual transfer step — from rough notes into a formatted, client-ready program — is where most of the time goes. It's not programming. It's formatting.
 
-That manual transfer step — from his rough notes into a formatted, client-ready program — is where most of his time goes. It's not programming. It's formatting.
-
-If that step disappeared — if his shorthand notes *were* the finished program — he'd recover 30–40% of that Sunday session every single week.
+If that step disappeared — if the shorthand notes *were* the finished program — she'd recover 30–40% of that Sunday session every single week.
 
 ---
 
 ## The Real Leverage Point for Personal Trainer Programming
 
-Most advice about scaling your training business focuses on client acquisition. Charge more. Niched down. Build passive income.
+Most advice about scaling your training business focuses on client acquisition. Charge more. Niche down. Build passive income.
 
 That's fine advice. But if you haven't solved the programming bottleneck first, more clients just means more hours at your desk.
 
@@ -123,4 +120,3 @@ It won't change how you program. It just removes the part that was never about p
 ---
 
 *Your weekends aren't wasted because you have too many clients. They're wasted because your workflow hasn't caught up with your client list. Fix the workflow first.*
-```
