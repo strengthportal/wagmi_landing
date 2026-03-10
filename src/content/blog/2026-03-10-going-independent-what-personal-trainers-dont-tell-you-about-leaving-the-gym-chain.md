@@ -3,7 +3,7 @@ title: "Going Independent as a Personal Trainer: What Nobody Tells You Before Yo
 description: "Thinking about going independent as a personal trainer? Here's the honest truth about leaving a gym chain — the good, the hard, and how to do it right."
 pubDate: 2026-03-10
 author: "WAGMI Fitness"
-tags: ["independent personal trainer", "start personal training business", "leave gym chain"]
+tags: ["Business"]
 draft: false
 ---
 

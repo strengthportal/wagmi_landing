@@ -3,7 +3,7 @@ title: "The Hybrid Personal Trainer's Toolkit: What You Actually Need to Run In-
 description: "Running in-person and online clients? Here's the hybrid personal training software and tools you actually need — without the bloat or complexity."
 pubDate: 2026-03-10
 author: "WAGMI Fitness"
-tags: ["hybrid personal training software", "tools for hybrid personal trainers", "online coaching", "client management", "personal trainer business"]
+tags: ["Software", "Business"]
 draft: false
 ---
 

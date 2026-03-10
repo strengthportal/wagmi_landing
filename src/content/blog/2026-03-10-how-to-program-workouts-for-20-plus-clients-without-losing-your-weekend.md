@@ -3,7 +3,7 @@ title: "How to Program Workouts for 20+ Clients Without Losing Your Weekend"
 description: "Struggling with programming workouts for multiple clients? Here are practical tips to build faster, stay organized, and actually reclaim your time."
 pubDate: 2026-03-10
 author: "WAGMI Fitness"
-tags: ["personal trainer tips", "client management", "workout programming"]
+tags: ["Workflow", "Coaching"]
 draft: false
 ---
 

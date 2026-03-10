@@ -3,7 +3,7 @@ title: "Why Programming Speed Is the #1 Bottleneck for Independent Trainers"
 description: "Most coaching software is optimized for features, not for the trainer's time. Here's why speed is the most underrated variable for independent coaches."
 pubDate: 2026-02-15
 author: "Wagmi Fit"
-tags: ["coaching", "workflow"]
+tags: ["Workflow", "Coaching"]
 draft: false
 ---
 

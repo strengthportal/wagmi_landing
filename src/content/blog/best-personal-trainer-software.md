@@ -3,7 +3,7 @@ title: "Best Personal Trainer Software in 2026 (For Independent Coaches)"
 description: "A no-fluff review of the best personal trainer software for independent coaches — covering programming speed, client delivery, and what matters most."
 pubDate: 2026-03-02
 author: "Wagmi Fit"
-tags: ["software", "workflow", "coaching"]
+tags: ["Software"]
 draft: false
 ---
 

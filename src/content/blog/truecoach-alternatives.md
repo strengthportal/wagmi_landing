@@ -3,7 +3,7 @@ title: "The Best TrueCoach Alternatives in 2026"
 description: "Looking to move on from TrueCoach? The best alternatives for independent personal trainers — compared on programming workflow, client delivery, and what you get for the price."
 pubDate: 2026-03-02
 author: "Wagmi Fit"
-tags: ["software", "workflow", "coaching"]
+tags: ["Software"]
 draft: false
 ---
 
