@@ -3,7 +3,7 @@ title: "What It Means to Be a Personal Trainer in the Age of AI"
 description: "AI isn't replacing personal trainers — it's separating the ones who adapt from the ones who don't. Here's the path to becoming an AI-native trainer."
 pubDate: 2026-03-10
 author: "WAGMI Fitness"
-tags: ["AI for personal trainers", "personal trainer tools", "fitness coaching", "online personal training", "workout programming"]
+tags: ["Coaching", "Workflow"]
 draft: false
 ---
 
