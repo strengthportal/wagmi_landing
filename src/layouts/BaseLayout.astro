@@ -13,7 +13,7 @@ const {
   title,
   description,
   ogImage = '/og-image.png',
-  canonicalUrl = Astro.url.href,
+  canonicalUrl = `https://wagmi.fit${Astro.url.pathname}`,
   schema,
 } = Astro.props;
 ---
