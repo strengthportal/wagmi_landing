@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Going Independent as a Personal Trainer: What Nobody Tells You Before You Leave"
 description: "Thinking about going independent as a personal trainer? Here's the honest truth about leaving a gym chain — the good, the hard, and how to do it right."
@@ -127,4 +126,3 @@ The trainers who make it stick aren't the ones who had the perfect plan. They're
 If you're running 10, 15, 20 clients as an independent trainer, one of the places admin time piles up fastest is program building. If you're still formatting workouts in spreadsheets or typing out programs by hand, [Wagmi Fit](https://wagmi.fit) is worth a look — it lets you type your programming in plain shorthand and structures it instantly into a client-ready format. Built for independent trainers who'd rather spend that time coaching.
 
 [Try WAGMI free →](https://wagmi.fit)
-```
