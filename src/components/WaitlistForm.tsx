@@ -22,7 +22,7 @@ declare global {
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
 interface WaitlistFormProps {
-  variant?: 'hero' | 'cta';
+  variant?: 'hero' | 'cta' | 'modal';
 }
 
 export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
@@ -146,17 +146,17 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
     );
   }
 
-  const isHero = variant === 'hero';
+  const isCta = variant === 'cta';
 
   return (
-    <div className={isHero ? 'flex w-full max-w-md flex-col gap-2' : 'mx-auto w-full max-w-md flex flex-col gap-3'}>
+    <div className={variant === 'hero' ? 'flex w-full max-w-md flex-col gap-2' : variant === 'modal' ? 'w-full flex flex-col gap-3' : 'mx-auto w-full max-w-md flex flex-col gap-3'}>
       {/* Turnstile mounts here via explicit render API — hidden, no layout impact */}
       <div ref={turnstileContainerRef} style={{ display: 'none' }} />
 
       <form
         onSubmit={handleSubmit}
         noValidate
-        className={isHero ? 'flex items-center gap-2' : 'flex flex-col gap-3 sm:flex-row'}
+        className={variant === 'hero' ? 'flex items-center gap-2' : variant === 'cta' ? 'flex flex-col gap-3 sm:flex-row' : 'flex flex-col gap-3'}
       >
         {/* Honeypot — hidden from humans, filled by bots */}
         <input
@@ -173,7 +173,7 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder={isHero ? 'Enter your email' : 'coach@example.com'}
+          placeholder={isCta ? 'coach@example.com' : 'Enter your email'}
           required
           disabled={formState === 'submitting'}
           className="flex h-12 w-full rounded-md border border-warm-border bg-card px-4 py-2 text-sm text-ink placeholder:text-ink-muted shadow-sm transition-all focus:border-cobalt focus:outline-none focus:ring-2 focus:ring-cobalt/20 disabled:opacity-60"
@@ -184,12 +184,12 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
           disabled={formState === 'submitting'}
           className={[
             'inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-cobalt px-6 font-medium text-white transition-all hover:bg-cobalt-dark focus:outline-none focus:ring-2 focus:ring-cobalt focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60',
-            isHero
-              ? 'text-base hover:-translate-y-[1px] hover:shadow-lg focus:ring-offset-card'
-              : 'w-full text-sm hover:shadow-md focus:ring-offset-parchment-alt sm:w-auto',
+            isCta
+              ? 'w-full text-sm hover:shadow-md focus:ring-offset-parchment-alt sm:w-auto'
+              : `${variant === 'modal' ? 'w-full ' : ''}text-base hover:-translate-y-[1px] hover:shadow-lg focus:ring-offset-card`,
           ].join(' ')}
         >
-          {formState === 'submitting' ? 'Joining…' : isHero ? 'Join Waitlist' : 'Request Access'}
+          {formState === 'submitting' ? 'Joining…' : isCta ? 'Request Access' : 'Join Waitlist'}
         </button>
       </form>
 
