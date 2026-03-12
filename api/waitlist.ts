@@ -2,6 +2,11 @@ export const config = { runtime: 'edge' };
 
 const ALLOWED_ORIGINS = ['https://wagmi.fit', 'https://www.wagmi.fit'];
 
+type TurnstileVerification = {
+  success: boolean;
+  'error-codes'?: string[];
+};
+
 function corsHeaders(origin: string | null): Record<string, string> {
   const allowed =
     (origin && ALLOWED_ORIGINS.includes(origin)) ||
@@ -64,27 +69,51 @@ export default async function handler(req: Request): Promise<Response> {
     return json({ success: false, error: 'Invalid email address' }, 400, cors);
   }
 
+  const normalizedEmail = email.trim().toLowerCase();
+
   // Turnstile verification
   if (!turnstileToken) {
     return json({ success: false, error: 'Verification failed' }, 400, cors);
   }
 
-  const turnstileRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      secret: process.env.TURNSTILE_SECRET_KEY,
-      response: turnstileToken,
-    }),
-  });
+  if (!process.env.TURNSTILE_SECRET_KEY) {
+    console.error('[waitlist] TURNSTILE_SECRET_KEY is not configured');
+    return json({ success: false, error: 'Verification unavailable. Please try again later.' }, 500, cors);
+  }
 
-  const turnstileData = (await turnstileRes.json()) as { success: boolean };
+  let turnstileData: TurnstileVerification;
+  try {
+    const turnstileRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        secret: process.env.TURNSTILE_SECRET_KEY,
+        response: turnstileToken,
+      }),
+    });
+
+    turnstileData = (await turnstileRes.json()) as TurnstileVerification;
+  } catch (error) {
+    console.error('[waitlist] Turnstile verification request failed', { email: normalizedEmail, error });
+    return json({ success: false, error: 'Verification failed. Please try again.' }, 502, cors);
+  }
+
   if (!turnstileData.success) {
-    return json({ success: false, error: 'Verification failed' }, 400, cors);
+    const errorCodes = turnstileData['error-codes'] ?? [];
+    console.error('[waitlist] Turnstile verification rejected', { email: normalizedEmail, errorCodes });
+    return json(
+      {
+        success: false,
+        error: errorCodes.includes('timeout-or-duplicate')
+          ? 'Verification expired. Please try again.'
+          : 'Verification failed. Please try again.',
+      },
+      400,
+      cors
+    );
   }
 
   const signedUpAt = new Date().toISOString();
-  const normalizedEmail = email.trim().toLowerCase();
 
   const intercomHeaders = {
     Authorization: `Bearer ${process.env.INTERCOM_API_TOKEN}`,

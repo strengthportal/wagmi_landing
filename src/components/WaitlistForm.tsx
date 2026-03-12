@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 declare global {
   interface Window {
@@ -9,11 +9,14 @@ declare global {
         options: {
           sitekey: string;
           size?: 'normal' | 'compact' | 'invisible';
+          execution?: 'render' | 'execute';
           callback?: (token: string) => void;
           'expired-callback'?: () => void;
           'error-callback'?: () => void;
         }
       ) => string;
+      execute: (widgetId: string) => void;
+      reset: (widgetId: string) => void;
       remove: (widgetId: string) => void;
     };
   }
@@ -29,23 +32,85 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
   const [email, setEmail] = useState('');
   const [formState, setFormState] = useState<FormState>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileInitialized, setTurnstileInitialized] = useState(false);
+  const [turnstileLoadError, setTurnstileLoadError] = useState(false);
   const honeypotRef = useRef<HTMLInputElement>(null);
   const turnstileContainerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const tokenResolveRef = useRef<((token: string) => void) | null>(null);
+  const tokenRejectRef = useRef<((error: Error) => void) | null>(null);
+  const tokenTimeoutRef = useRef<number | null>(null);
+
+  const clearPendingTokenRequest = useCallback(() => {
+    if (tokenTimeoutRef.current) {
+      window.clearTimeout(tokenTimeoutRef.current);
+      tokenTimeoutRef.current = null;
+    }
+    tokenResolveRef.current = null;
+    tokenRejectRef.current = null;
+  }, []);
+
+  const resetTurnstile = useCallback(() => {
+    clearPendingTokenRequest();
+    const widgetId = widgetIdRef.current;
+    if (widgetId) {
+      window.turnstile?.reset(widgetId);
+    }
+  }, [clearPendingTokenRequest]);
+
+  const requestTurnstileToken = useCallback(() => {
+    const widgetId = widgetIdRef.current;
+    if (!widgetId || !window.turnstile) {
+      return Promise.reject(new Error('Verification is still loading. Please try again in a moment.'));
+    }
+
+    clearPendingTokenRequest();
+    setTurnstileLoadError(false);
+    window.turnstile.reset(widgetId);
+
+    return new Promise<string>((resolve, reject) => {
+      tokenResolveRef.current = resolve;
+      tokenRejectRef.current = reject;
+      tokenTimeoutRef.current = window.setTimeout(() => {
+        clearPendingTokenRequest();
+        reject(new Error('Verification timed out. Please try again.'));
+      }, 12000);
+      window.turnstile?.execute(widgetId);
+    });
+  }, [clearPendingTokenRequest]);
 
   useEffect(() => {
     let cancelled = false;
 
     function initWidget() {
-      if (cancelled || !turnstileContainerRef.current || !window.turnstile) return;
+      if (cancelled || widgetIdRef.current || !turnstileContainerRef.current || !window.turnstile) return;
       widgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
         sitekey: '0x4AAAAAAClPdTUjwMIFdS8i',
         size: 'invisible',
-        callback: (token) => { if (!cancelled) setTurnstileToken(token); },
-        'expired-callback': () => { if (!cancelled) setTurnstileToken(null); },
-        'error-callback': () => { if (!cancelled) setTurnstileToken(null); },
+        execution: 'execute',
+        callback: (token) => {
+          if (cancelled) return;
+          setTurnstileLoadError(false);
+          const resolve = tokenResolveRef.current;
+          clearPendingTokenRequest();
+          resolve?.(token);
+        },
+        'expired-callback': () => {
+          if (cancelled) return;
+          const reject = tokenRejectRef.current;
+          clearPendingTokenRequest();
+          reject?.(new Error('Verification expired. Please try again.'));
+        },
+        'error-callback': () => {
+          if (cancelled) return;
+          setTurnstileLoadError(true);
+          const reject = tokenRejectRef.current;
+          clearPendingTokenRequest();
+          reject?.(new Error('Verification failed. Please try again.'));
+        },
       });
+      setTurnstileInitialized(true);
+      setTurnstileLoadError(false);
     }
 
     if (window.turnstile) {
@@ -57,27 +122,46 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
         script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
         script.async = true;
         script.defer = true;
+        script.onerror = () => {
+          if (!cancelled) setTurnstileLoadError(true);
+        };
         document.head.appendChild(script);
       }
-      // Poll until the script has loaded and window.turnstile is available
+
+      const timeout = window.setTimeout(() => {
+        if (!cancelled && !window.turnstile && !widgetIdRef.current) {
+          setTurnstileLoadError(true);
+        }
+      }, 8000);
+
       const interval = setInterval(() => {
         if (window.turnstile) {
           clearInterval(interval);
+          clearTimeout(timeout);
           initWidget();
         }
       }, 100);
       return () => {
         cancelled = true;
         clearInterval(interval);
-        if (widgetIdRef.current) window.turnstile?.remove(widgetIdRef.current);
+        clearTimeout(timeout);
+        if (widgetIdRef.current) {
+          clearPendingTokenRequest();
+          window.turnstile?.remove(widgetIdRef.current);
+          widgetIdRef.current = null;
+        }
       };
     }
 
     return () => {
       cancelled = true;
-      if (widgetIdRef.current) window.turnstile?.remove(widgetIdRef.current);
+      if (widgetIdRef.current) {
+        clearPendingTokenRequest();
+        window.turnstile?.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
     };
-  }, []);
+  }, [clearPendingTokenRequest]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -88,9 +172,15 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
       return;
     }
 
-    if (!turnstileToken) {
+    if (turnstileLoadError) {
       setFormState('error');
-      setErrorMessage('Verification still loading — please try again in a moment.');
+      setErrorMessage('Verification failed to load. Please disable blockers or refresh and try again.');
+      return;
+    }
+
+    if (!turnstileInitialized || !widgetIdRef.current) {
+      setFormState('error');
+      setErrorMessage('Verification is still loading. Please try again in a moment.');
       return;
     }
 
@@ -100,6 +190,7 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
     const params = new URLSearchParams(window.location.search);
 
     try {
+      const turnstileToken = await requestTurnstileToken();
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -128,12 +219,12 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
       } else {
         setFormState('error');
         setErrorMessage(data.error ?? 'Something went wrong. Please try again.');
-        setTurnstileToken(null);
+        resetTurnstile();
       }
-    } catch {
+    } catch (error) {
       setFormState('error');
-      setErrorMessage('Something went wrong. Please try again.');
-      setTurnstileToken(null);
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
+      resetTurnstile();
     }
   }
 
@@ -186,7 +277,7 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
             'inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-cobalt px-6 font-medium text-white transition-all hover:bg-cobalt-dark focus:outline-none focus:ring-2 focus:ring-cobalt focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60',
             isCta
               ? 'w-full text-sm hover:shadow-md focus:ring-offset-parchment-alt sm:w-auto'
-              : `${variant === 'modal' ? 'w-full ' : ''}text-base hover:-translate-y-[1px] hover:shadow-lg focus:ring-offset-card`,
+              : `${variant === 'modal' ? 'w-full ' : ''}text-base hover:-translate-y-px hover:shadow-lg focus:ring-offset-card`,
           ].join(' ')}
         >
           {formState === 'submitting' ? 'Joining…' : isCta ? 'Request Access' : 'Join Waitlist'}
