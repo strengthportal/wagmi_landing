@@ -64,7 +64,6 @@ export default function WaitlistModal() {
             <WaitlistForm variant="modal" />
           </div>
         </div>
-      </div>
     </>
   );
 }
