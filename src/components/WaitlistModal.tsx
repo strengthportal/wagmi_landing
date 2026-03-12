@@ -29,13 +29,12 @@ export default function WaitlistModal() {
         Get Early Access
       </button>
 
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Join the waitlist"
-        >
+      <div
+        className={`fixed inset-0 z-[100] flex items-center justify-center p-4 ${isOpen ? '' : 'hidden'}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Join the waitlist"
+      >
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -65,7 +64,7 @@ export default function WaitlistModal() {
             <WaitlistForm variant="modal" />
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
