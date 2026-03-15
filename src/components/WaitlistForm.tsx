@@ -230,7 +230,7 @@ export default function WaitlistForm({ variant = 'hero' }: WaitlistFormProps) {
 
   if (formState === 'success') {
     return (
-      <div className="flex flex-col items-center gap-1.5 py-3 text-center">
+      <div data-testid="success-state" className="flex flex-col items-center gap-1.5 py-3 text-center">
         <p className="text-sm font-medium text-cobalt">You're on the list!</p>
         <p className="text-xs text-ink-muted">We'll be in touch when it's your turn.</p>
       </div>

@@ -1,24 +1,26 @@
 ---
 const faqs = [
   {
-    question: 'How is Wagmi Fit different from Trainerize or TrueCoach?',
-    answer:
-      'Trainerize and TrueCoach were built around drag-and-drop program builders — they work fine if you have time to click through menus. Wagmi Fit takes a different approach: you type your workout in plain text, shorthand, whatever comes naturally, and we structure it instantly into a polished program. For independent trainers with 10–30 clients, the time savings add up fast.',
+    question: 'How is WAGMI FIT different from legacy platforms like Trainerize or TrueCoach?',
+    answer: [
+      'Honestly? Those are fine products — they just weren\'t built for how trainers think. They were built for how software developers in 2014 thought trainers should work: drag-and-drop builders, exercise video libraries, menu-driven everything. WAGMI FIT skips all of that. You type your workout in plain text and we handle the structure instantly. We\'re not a legacy platform with an AI feature bolted on — we\'re built AI-native from the ground up.',
+      'The rest of the field isn\'t much different. Superset went upmarket — great if you\'re running a facility or a team, less relevant if you\'re solo. EverFit expanded into corporate wellness, nutrition, habits, sports performance — basically everything except being fast for someone who just wants to write a program. StrengthPortal is solid for coaches who live in percentages and training blocks, but it\'s a lot of setup overhead for most. None of them are bad. They just serve a different trainer than we do. WAGMI FIT is narrow on purpose: independent trainers who want to program fast and deliver a great client experience without the overhead.',
+    ],
   },
   {
-    question: 'What kind of personal trainers is Wagmi Fit built for?',
+    question: 'What kind of personal trainers is WAGMI FIT built for?',
     answer:
-      'Independent personal trainers running solo coaching businesses — whether online, in-person, or hybrid. If you\'re writing programs for multiple clients and spending too much time on formatting and admin instead of coaching, Wagmi Fit is built for you. It\'s not designed for large gym chains or team-based operations.',
+      'Independent personal trainers running solo coaching businesses — whether online, in-person, or hybrid. If you\'re writing programs for multiple clients and spending too much time on formatting and admin instead of coaching, WAGMI FIT is built for you. We\'re not designed for large gym chains or team-based operations. We\'re built for the independent trainer who wants to deliver premium service without premium overhead.',
   },
   {
-    question: 'How much does Wagmi Fit cost?',
+    question: 'How much does WAGMI FIT cost?',
     answer:
-      'Wagmi Fit is currently in beta. Join the waitlist to get early access — early users will receive preferential pricing when paid plans launch.',
+      'WAGMI FIT is currently in beta. Join the waitlist to get early access — early users will receive preferential pricing when paid plans launch.',
   },
   {
     question: 'How does the workout programming actually work?',
     answer:
-      'You type your workout notes the way you naturally think — shorthand, abbreviations, quick notes like "squat 4x8 @70%, bench 3x10, db rows 3x12." Wagmi Fit parses that input, matches exercises to your library, calculates percentages, and formats it into a structured program your client can follow from any device. No drag-and-drop required.',
+      'You type your workout notes the way you naturally think — shorthand, abbreviations, quick notes like "squat 4x8 @70%, bench 3x10, db rows 3x12." WAGMI FIT parses that input, matches exercises to your library, calculates percentages, and formats it into a structured program your client can follow from any device. No drag-and-drop required.',
   },
   {
     question: 'Do my clients need to download an app?',
@@ -69,7 +71,11 @@ const faqSchema = {
               class="shrink-0 text-ink-muted transition-transform duration-200 group-open:rotate-180"
             ></iconify-icon>
           </summary>
-          <p class="mt-4 text-sm leading-relaxed text-ink-muted">{faq.answer}</p>
+          <div class="mt-4 space-y-3">
+            {(Array.isArray(faq.answer) ? faq.answer : [faq.answer]).map((para) => (
+              <p class="text-sm leading-relaxed text-ink-muted">{para}</p>
+            ))}
+          </div>
         </details>
       ))}
     </div>

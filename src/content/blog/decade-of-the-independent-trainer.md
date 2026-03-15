@@ -2,7 +2,7 @@
 title: "The Decade of the Independent Personal Trainer"
 description: "The same forces that built the creator economy are reshaping personal training. Independent trainers have never had more leverage — and most haven't realized it yet."
 pubDate: 2026-03-10
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Business"]
 draft: false
 ---
@@ -115,6 +115,6 @@ We're all gonna make it — but the trainers who move first will get there faste
 
 The infrastructure is here. What you build with it is up to you.
 
-If you're ready to move faster, [try WAGMI free →](https://wagmi.fit). Type your programs the way you already think. Deliver them professionally. And spend your energy on what got you into training in the first place.
+If you're ready to move faster, [try WAGMI FIT free →](https://wagmi.fit). Type your programs the way you already think. Deliver them professionally. And spend your energy on what got you into training in the first place.
 
 Stop formatting. Start coaching.

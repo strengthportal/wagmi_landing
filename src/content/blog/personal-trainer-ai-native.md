@@ -2,7 +2,7 @@
 title: "What It Means to Be a Personal Trainer in the Age of AI"
 description: "AI isn't replacing personal trainers — it's separating the ones who adapt from the ones who don't. Here's the path to becoming an AI-native trainer."
 pubDate: 2026-03-10
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Coaching", "Workflow"]
 draft: false
 ---
@@ -115,6 +115,6 @@ Type how you think. Let the platform handle the structure. Get the program to yo
 
 That's the shift. Everything else follows from there.
 
-If you're ready to see what that looks like in practice, [try WAGMI free →](https://wagmi.fit). No templates to configure, no menus to learn. Just type your program and see what happens.
+If you're ready to see what that looks like in practice, [try WAGMI FIT free →](https://wagmi.fit). No templates to configure, no menus to learn. Just type your program and see what happens.
 
 Stop formatting. Start coaching.

@@ -2,7 +2,7 @@
 title: "Why Programming Speed Is the #1 Bottleneck for Independent Trainers"
 description: "Most coaching software is optimized for features, not for the trainer's time. Here's why speed is the most underrated variable for independent coaches."
 pubDate: 2026-02-15
-author: "Wagmi Fit"
+author: "WAGMI FIT"
 tags: ["Workflow", "Coaching"]
 draft: false
 ---
@@ -29,11 +29,11 @@ Speed removes friction. And when friction is removed from a creative, knowledge-
 
 ## What We Do Differently
 
-WAGMI is built around a single idea: trainers should be able to program as fast as they can think. That means accepting natural language, shorthand, and abbreviations — the way trainers actually communicate internally — and converting that instantly into structured, client-ready programs.
+WAGMI FIT is built around a single idea: trainers should be able to program as fast as they can think. That means accepting natural language, shorthand, and abbreviations — the way trainers actually communicate internally — and converting that instantly into structured, client-ready programs.
 
 No drag and drop. No template browsing. No reformatting.
 
-You type the way you already type when you're thinking through a program. WAGMI handles the rest.
+You type the way you already type when you're thinking through a program. WAGMI FIT handles the rest.
 
 The result isn't just faster programming. It's a sustainable business model where you can take on more clients, deliver better programs, and still have energy left at the end of the day for the part of the job you actually love: coaching.
 

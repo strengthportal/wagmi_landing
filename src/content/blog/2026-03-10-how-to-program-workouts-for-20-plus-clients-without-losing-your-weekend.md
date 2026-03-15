@@ -2,7 +2,7 @@
 title: "How to Program Workouts for 20+ Clients Without Losing Your Weekend"
 description: "Struggling with programming workouts for multiple clients? Here are practical tips to build faster, stay organized, and actually reclaim your time."
 pubDate: 2026-03-10
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Workflow", "Coaching"]
 draft: false
 ---
@@ -111,11 +111,11 @@ When you're programming workouts for multiple clients across different goals, tr
 
 If you're at the point where programming time is genuinely eating into your weekends, it's worth looking at whether your tools are keeping up with you.
 
-[Wagmi Fit](https://wagmi.fit) is built specifically for independent trainers who write programs in natural shorthand. Type how you already think — `squat 4x8 @70%, bench 3x10, DB rows 3x12` — and it structures it instantly into a polished, client-ready program. No menus. No drag-and-drop. No reformatting.
+[WAGMI FIT](https://wagmi.fit) is built specifically for independent trainers who write programs in natural shorthand. Type how you already think — `squat 4x8 @70%, bench 3x10, DB rows 3x12` — and it structures it instantly into a polished, client-ready program. No menus. No drag-and-drop. No reformatting.
 
 It won't change how you program. It just removes the part that was never about programming in the first place.
 
-[Try WAGMI free →](https://wagmi.fit)
+[Try WAGMI FIT free →](https://wagmi.fit)
 
 ---
 

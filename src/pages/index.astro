@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Hero from '../components/landing/Hero.astro';
 import LogoCloud from '../components/landing/LogoCloud.astro';
 import HowItWorks from '../components/landing/HowItWorks.astro';
+import NGMI from '../components/landing/NGMI.astro';
 import Features from '../components/landing/Features.astro';
 import FAQ from '../components/landing/FAQ.astro';
 import CTA from '../components/landing/CTA.astro';
@@ -14,9 +15,9 @@ const homeSchema = {
   '@graph': [
     {
       '@type': 'Organization',
-      name: 'Wagmi Fit',
+      name: 'WAGMI FIT',
       url: 'https://wagmi.fit',
-      description: 'The fastest workout programming tool for independent personal trainers. Type how you think — messy, fast, shorthand — and WAGMI structures it into polished, client-ready programs instantly.',
+      description: 'The fastest workout programming tool for independent personal trainers. Type how you think — messy, fast, shorthand — and WAGMI FIT structures it into polished, client-ready programs instantly.',
       sameAs: [
         'https://www.linkedin.com/company/wagmi-fit/',
         'https://www.facebook.com/people/Wagmi-Fit/61586240046301/',
@@ -24,12 +25,12 @@ const homeSchema = {
     },
     {
       '@type': 'WebSite',
-      name: 'Wagmi Fit',
+      name: 'WAGMI FIT',
       url: 'https://wagmi.fit',
     },
     {
       '@type': 'SoftwareApplication',
-      name: 'Wagmi Fit',
+      name: 'WAGMI FIT',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       url: 'https://wagmi.fit',
@@ -55,6 +56,7 @@ const homeSchema = {
     <Hero />
     <LogoCloud />
     <HowItWorks />
+    <NGMI />
     <Features />
     <FAQ />
     <CTA />

@@ -1,8 +1,8 @@
 ---
-title: "Welcome to Wagmi Fit"
+title: "Welcome to WAGMI FIT"
 description: "We're building the fastest workout programming tool for independent personal trainers. Here's why we started, what we're building, and what's coming next."
 pubDate: 2026-02-01
-author: "Wagmi Fit"
+author: "WAGMI FIT"
 tags: ["Product"]
 draft: false
 ---
@@ -11,11 +11,11 @@ draft: false
 
 If you've spent any time as an independent personal trainer, you know the grind. You love coaching. You love seeing your clients hit PRs, transform their bodies, and build confidence they never had before. But somewhere between your sixth client of the day and the spreadsheet you're staring at at 10pm, the job starts to feel less like coaching and more like data entry.
 
-That's the problem WAGMI was built to solve.
+That's the problem WAGMI FIT was built to solve.
 
 ## What We're Building
 
-WAGMI is a workout programming tool designed specifically for independent trainers who move fast. Instead of dragging exercises into clunky builders or wrestling with Excel formulas, you just type — the way you actually think when you're programming. Messy notes, shorthand, abbreviations — whatever gets the workout out of your head fastest.
+WAGMI FIT is a workout programming tool designed specifically for independent trainers who move fast. Instead of dragging exercises into clunky builders or wrestling with Excel formulas, you just type — the way you actually think when you're programming. Messy notes, shorthand, abbreviations — whatever gets the workout out of your head fastest.
 
 Our system takes those raw notes and instantly structures them into polished, client-ready programs. No reformatting. No clicking through menus. Just type, and it's done.
 
@@ -23,7 +23,7 @@ Our system takes those raw notes and instantly structures them into polished, cl
 
 We're now in private beta, working closely with a small group of trainers to refine the experience before a wider launch. Beta users get early access to all features, a direct line to the team, and a rate that's locked in for life.
 
-If you're a trainer who programs more than five clients a week and you're tired of the administrative overhead, WAGMI might be exactly what you've been waiting for.
+If you're a trainer who programs more than five clients a week and you're tired of the administrative overhead, WAGMI FIT might be exactly what you've been waiting for.
 
 ## What's Coming
 

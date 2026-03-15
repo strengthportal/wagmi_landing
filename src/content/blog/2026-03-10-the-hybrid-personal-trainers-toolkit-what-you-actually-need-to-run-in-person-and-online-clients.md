@@ -2,7 +2,7 @@
 title: "The Hybrid Personal Trainer's Toolkit: What You Actually Need to Run In-Person and Online Clients"
 description: "Running in-person and online clients? Here's the hybrid personal training software and tools you actually need — without the bloat or complexity."
 pubDate: 2026-03-10
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Software", "Business"]
 draft: false
 ---
@@ -138,6 +138,6 @@ Cover the four things that actually matter — fast programming, clean delivery,
 
 ---
 
-If you're building or tightening your hybrid coaching setup, [Try WAGMI free →](https://wagmi.fit). It's built for independent trainers who already know what to program and want to spend less time getting it out of their head and into their clients' hands.
+If you're building or tightening your hybrid coaching setup, [Try WAGMI FIT free →](https://wagmi.fit). It's built for independent trainers who already know what to program and want to spend less time getting it out of their head and into their clients' hands.
 
 No drag-and-drop builders. No formatting busywork. Type how you think — it handles the rest.

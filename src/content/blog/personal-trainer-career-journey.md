@@ -2,7 +2,7 @@
 title: "Why So Many Trainers Quit at Two Years — and Why That's Finally Changing"
 description: "The personal training industry loses most of its talent within two years. It's not a passion problem. It's a software problem — and that's finally being solved."
 pubDate: 2026-03-11
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Business", "Workflow"]
 draft: false
 ---
@@ -95,4 +95,4 @@ That's finally changing. When you can type `squat 4x8, bench 3x10, db rows 3x12`
 
 Whether you're building your book at a gym, thinking about going independent, or already running a hybrid business — the trainers who get more years and more income out of this career are the ones who stopped accepting that admin was part of the deal.
 
-Wagmi Fit is built for that. [See how fast you can actually work.](https://wagmi.fit)
+WAGMI FIT is built for that. [See how fast you can actually work.](https://wagmi.fit)

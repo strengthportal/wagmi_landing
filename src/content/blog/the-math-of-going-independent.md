@@ -2,7 +2,7 @@
 title: "The Math of Going Independent as a Personal Trainer (And Why It's Better Than You Think)"
 description: "Most trainers don't leave the gym because the math feels risky. This post does the math for you — and the numbers might surprise you."
 pubDate: 2026-03-10
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Business"]
 draft: false
 ---
@@ -136,6 +136,6 @@ But the trainers who make that shift — who look at the math, take the leap, an
 
 The gym gave you the foundation. What you build on top of it is up to you.
 
-If you're ready to build the systems side of your independent practice, [try WAGMI free →](https://wagmi.fit). Program your clients faster, deliver professionally, and spend your time on coaching — not formatting.
+If you're ready to build the systems side of your independent practice, [try WAGMI FIT free →](https://wagmi.fit). Program your clients faster, deliver professionally, and spend your time on coaching — not formatting.
 
 Stop formatting. Start coaching.

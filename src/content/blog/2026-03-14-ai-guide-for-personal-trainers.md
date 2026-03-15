@@ -7,7 +7,7 @@ series_order: 1
 meta_description: "AI explained for personal trainers — no jargon, no hype. Understand what it can do, what it can't, and why it matters for your coaching business. Start here."
 target_word_count: 1350
 pubDate: 2026-03-13
-author: "WAGMI Fitness"
+author: "WAGMI FIT"
 tags: ["Coaching", "Workflow"]
 draft: false
 ---

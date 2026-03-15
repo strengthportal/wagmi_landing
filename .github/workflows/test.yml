@@ -1,0 +1,66 @@
+name: Tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  # ── Unit / integration tests for api/waitlist.ts ───────────────────────────
+  test-api:
+    name: API tests (Vitest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run API tests
+        run: npm run test:api
+        env:
+          # Vitest stubs these per-test; these are here so process.env exists
+          TURNSTILE_SECRET_KEY: test-placeholder
+          INTERCOM_API_TOKEN: test-placeholder
+
+  # ── E2E smoke tests (Playwright) ──────────────────────────────────────────
+  test-e2e:
+    name: E2E tests (Playwright)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          CI: true
+          # The API is mocked in tests; these keep the build from failing
+          # if any env checks exist at build time
+          TURNSTILE_SECRET_KEY: test-placeholder
+          INTERCOM_API_TOKEN: test-placeholder
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

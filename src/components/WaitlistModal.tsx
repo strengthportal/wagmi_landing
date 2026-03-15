@@ -24,6 +24,7 @@ export default function WaitlistModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
+        data-testid="modal-trigger"
         className="inline-flex h-9 items-center justify-center rounded-md bg-cobalt px-4 text-sm font-medium text-white transition-colors hover:bg-cobalt-dark hover:-translate-y-[1px] hover:shadow-md"
       >
         Get Early Access
@@ -34,6 +35,7 @@ export default function WaitlistModal() {
         role="dialog"
         aria-modal="true"
         aria-label="Join the waitlist"
+        data-testid="waitlist-modal"
       >
           {/* Backdrop */}
           <div
