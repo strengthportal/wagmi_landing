@@ -6,7 +6,7 @@ series: "AI for Fitness Professionals"
 series_order: 2
 meta_description: "Cut through the noise. Here's a practical map of the AI tools personal trainers are using — organized by the problems they solve, not tech category."
 target_word_count: 1250
-pubDate: 2026-03-13
+pubDate: 2026-03-14
 author: "WAGMI Fitness"
 tags: ["Software", "Workflow"]
 draft: false
